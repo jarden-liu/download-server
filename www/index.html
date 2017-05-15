@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>进度</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect();
+        socket.on('download-progress', function(data) {
+            console.log(data);
+            var progress = document.querySelector('#progress-box');
+            progress.innerHTML = parseInt(data.state.percent*100) +'%';
+            if (data.state.percent == 1) {
+              location.href = '/get-file-list';
+            }
+            return false;
+        });
+
+        socket.on('download-error', function(data) {
+            console.log(data);
+            var error = document.querySelector('#progress-error');
+            error.innerHTML = '下载失败';
+
+            return false;
+        });
+    </script>
+</head>
+<body>
+  <div>
+    下载进度: <span id="progress-box"> </span>
+  </div>
+
+  <div id="progress-error">
+  </div>
+</body>
+
+</html>
