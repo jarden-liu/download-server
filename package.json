@@ -1,0 +1,25 @@
+{
+  "name": "download-server",
+  "version": "1.0.0",
+  "description": "a download file server",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarden-liu/download-server.git"
+  },
+  "keywords": [
+    "download"
+  ],
+  "author": "jarden-liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarden-liu/download-server/issues"
+  },
+  "homepage": "https://github.com/jarden-liu/download-server#readme",
+  "devDependencies": {
+    "express": "^4.15.2"
+  }
+}
